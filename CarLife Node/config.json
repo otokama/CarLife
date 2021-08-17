@@ -1,0 +1,5 @@
+{
+
+    "secret": "sadfaseagasef",
+    "connectionString": "mongodb://localhost/CS3754"
+}
