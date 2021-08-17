@@ -1,4 +1,4 @@
-# CarLife back-end (Angular)    
+# CarLife back-end (Node)    
 
 
 ## Change Log:    
