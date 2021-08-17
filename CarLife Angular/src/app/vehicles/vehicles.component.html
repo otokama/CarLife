@@ -1,0 +1,11 @@
+<div class="record-container">
+  <app-vehiclerecord class="card-item" *ngFor="let vehiclerecord of vehiclesrecords" [vehiclerecord]="vehiclerecord"
+  (editEvent)="openEditDialog($event)" (deleteEvent)="delete($event)" [displayOnDash]="false" ></app-vehiclerecord>
+
+</div>
+
+<div class="fab-container">
+  <button mat-flat-button color="primary"  matTooltip="Add new vehicle"  (click)="openAddDialog()">
+    <i class="material-icons">add</i>
+  </button>
+</div>

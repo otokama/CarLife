@@ -1,0 +1,15 @@
+<mat-card>
+  <div class="card">
+    <div><img class="icon" src="../../assets/svg/modtype/{{modtype[modRecord.type]}}.svg"/></div>
+    <div class="make">{{modRecord.make}}</div>
+    <div class="cost">${{modRecord.cost}}</div>
+    <div class="partname">{{modRecord.partname}}</div>
+    <div class="mileage">Installed for {{currentVehicle.mileage - modRecord.mileage}} Miles</div>
+    <div class="date">On {{modRecord.date | date}}</div>
+  </div>
+  <mat-card-actions *ngIf="!isTuner()">
+    <button mat-button class="edit-fonts" (click)="edit()">Edit</button>
+    <button mat-button class="delete-fonts" (click)="delete()">Delete</button>
+  </mat-card-actions>
+
+</mat-card>

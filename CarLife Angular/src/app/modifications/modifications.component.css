@@ -1,0 +1,41 @@
+.toolbar {
+  height: 45px;
+}
+.tuner-toolbar {
+  height: 78px;
+}
+.tuner-field{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 17px;
+}
+.tuner-form{
+  padding-top:15px;
+  width: 180px;
+}
+.form {
+  padding-top: 4px;
+  width: 140px;
+}
+.fonts {
+  font-family: 'Titillium Web', sans-serif;
+}
+.mod-container {
+  display: grid;
+  justify-items: center;
+  padding: 10px 10px 10px 10px;
+}
+.card-item{
+  flex: 1;
+  padding: 10px 10px 10px 10px;
+  width:400px;
+
+}
+.fab-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}

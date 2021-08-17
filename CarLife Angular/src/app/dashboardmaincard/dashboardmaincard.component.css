@@ -1,0 +1,90 @@
+.form {
+  padding-top: 4px;
+  width: 140px;
+}
+.toolbar {
+  height: 45px;
+}
+.fonts {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.maintenance-container {
+  display: grid;
+  justify-items: center;
+  padding: 10px 10px 10px 10px;
+}
+
+.due-soon{
+  width: fit-content;
+}
+.mat-card-header{
+  justify-content: center;
+  height: 17px;
+}
+.title{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: large;
+  font-weight: bold;
+  padding-right:35px;
+}
+
+
+.due-soon-panel-title{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: large;
+}
+.due-soon-primary-font{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: small;
+}
+
+.due-soon-expand{
+  padding: 1px 1px 1px 1px;
+}
+
+.primary-container{
+  display: grid;
+  grid-template-columns: 45px 45px 45px 45px;
+  grid-template-rows: 33px;
+  justify-content: space-around;
+  grid-template-areas:
+    "last-main-date last-main-date last-main-miles last-main-miles"
+    "interval-title . interval interval "
+    "progress progress progress progress";
+}
+
+
+.last-main-date{
+  grid-area: last-main-date;
+}
+
+.last-main-title{
+  grid-area: last-main-title;
+}
+
+.last-main-miles{
+  grid-area: last-main-miles;
+}
+
+.interval-title{
+  grid-area: interval-title;
+}
+
+.interval{
+  grid-area: interval;
+}
+
+.progress{
+  grid-area: progress;
+  padding: 13px 0px 4px 0px;
+}
+
+
+.cost-title{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: large;
+  font-weight: bold;
+  padding-right:35px;
+
+}

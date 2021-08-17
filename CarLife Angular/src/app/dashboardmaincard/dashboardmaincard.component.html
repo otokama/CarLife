@@ -1,0 +1,65 @@
+
+<mat-toolbar class="toolbar">
+  <mat-form-field appearance="legacy" class="form">
+    <mat-select [(ngModel)]="currentVehicle"  class="fonts">
+      <mat-option class="fonts" *ngFor="let vehicle of vehicleRecords" [value]="vehicle"  (click)="loadMaintenanceRecords()" >{{vehicle.nickname}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+
+<div class="maintenance-container">
+  <mat-card class="due-soon">
+    <mat-card-header>
+      <div class="title">Maintenance Summary</div>
+
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-accordion class="due-soon-expand" *ngFor="let currentMainRecord of currentMainRecords">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="due-soon-panel-title">
+              {{currentMainRecord.maintenanceName}}
+            </mat-panel-title>
+            <mat-panel-description class="fonts">
+              Miles Left: {{getMilesLeft(currentMainRecord)}} Miles
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="primary-container">
+            <div class="last-main-date">On {{currentMainRecord.date | date}}</div>
+            <div class="last-main-miles">At {{currentMainRecord.mileage}} Miles</div>
+            <div class="interval-title">Interval:</div>
+            <div class="interval">Every {{currentMainRecord.intervalMile}} Miles</div>
+            <mat-progress-bar class="progress" mode="determinate" color="primary" value="{{getProgressValue(getMilesLeft(currentMainRecord), currentMainRecord.intervalMile)}}" *ngIf="getProgressValue(getMilesLeft(currentMainRecord), currentMainRecord.intervalMile) > 20"></mat-progress-bar>
+            <mat-progress-bar class="progress" mode="determinate" color="warn"    value="{{getProgressValue(getMilesLeft(currentMainRecord), currentMainRecord.intervalMile)}}" *ngIf="getProgressValue(getMilesLeft(currentMainRecord), currentMainRecord.intervalMile) <= 20"></mat-progress-bar>
+
+
+          </div>
+
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+    </mat-card-content>
+
+    <mat-card-header>
+      <div class="cost-title">Cost Summary</div>
+    </mat-card-header>
+
+
+    <div style="width: 100%;">
+      <canvas
+        baseChart
+        [chartType]="'pie'"
+        [legend]="true"
+        [datasets]="chartData"
+        [labels]="chartLabels"
+      >
+      </canvas>
+    </div>
+
+  </mat-card>
+
+</div>

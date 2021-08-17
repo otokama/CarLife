@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="title">Adding a mod for {{nickname}}</div>
+
+  <mat-dialog-content>
+
+
+    <mat-form-field>
+      <mat-label>Select Mod Type</mat-label>
+      <mat-select [(ngModel)]="modtype" [formControl]="fieldControl1"  required>
+        <mat-option value='0'>Engine</mat-option>
+        <mat-option value='1'>DriveTrain</mat-option>
+        <mat-option value='2'>Handling</mat-option>
+        <mat-option value='3'>Exterior</mat-option>
+        <mat-option value='4'>Interior</mat-option>
+        <mat-option value='5'>Exhaust</mat-option>
+
+      </mat-select>
+      <mat-error *ngIf="fieldControl1.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Make" [(ngModel)]="make"  [formControl]="fieldControl1" required>
+      <mat-error *ngIf="fieldControl1.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Cost $" [(ngModel)]="cost"  [formControl]="fieldControl1" required>
+      <mat-error *ngIf="fieldControl1.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description" [(ngModel)]="partname"  [formControl]="fieldControl1" required>
+      <mat-error *ngIf="fieldControl1.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Installed Since Mileage" [(ngModel)]="mileage"  [formControl]="fieldControl1" required>
+      <mat-error *ngIf="fieldControl1.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="addDate" placeholder="Installed On"  [formControl]="fieldControl1" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="fieldControl1.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="mat-raised-button" (click)="onNoClick()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+  </mat-dialog-actions>
+</div>

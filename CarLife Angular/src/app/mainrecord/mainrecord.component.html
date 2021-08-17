@@ -1,0 +1,31 @@
+<mat-card >
+
+  <mat-card-content class="record-card">
+    <div class="title">{{mainrecord.maintenanceName}}</div>
+    <div class="datetitle">Last Maintenance on:</div>
+    <div class="date">{{mainrecord.date | date}}</div>
+
+    <div class="mainmilestitle">Last Maintenance at:</div>
+    <div class="mainmiles">{{mainrecord.mileage}} Miles</div>
+
+    <div class="cost-title">Cost:</div>
+    <div class="cost">$ {{mainrecord.cost}}</div>
+
+    <div class="interval-title">Interval: </div>
+    <div class="interval">{{mainrecord.intervalMile}} Miles</div>
+
+    <div class="milesleft-title">Miles Left:</div>
+    <div class="milesleft">{{milesLeft}} Miles</div>
+    <mat-progress-bar class="progressbar" mode="determinate" color="primary" value="{{milesLeftProgressValue}}" *ngIf="milesLeftProgressValue > 20"></mat-progress-bar>
+    <mat-progress-bar class="progressbar" mode="determinate" color="warn"    value="{{milesLeftProgressValue}}" *ngIf="milesLeftProgressValue <= 20"></mat-progress-bar>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button *ngIf="!isTuner()" class="edit-fonts" (click)="edit()">Edit</button>
+    <button mat-button *ngIf="!isTuner()" class="delete-fonts" (click)="delete()">Delete</button>
+    <button mat-button class="comment" (click)="comment()">Comment</button>
+
+  </mat-card-actions>
+
+
+</mat-card>

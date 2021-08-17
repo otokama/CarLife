@@ -1,0 +1,55 @@
+
+.comment-card{
+  padding-top: 30px;
+  justify-content: space-between;
+}
+
+.my-comment-container{
+  display: grid;
+  justify-content: end;
+  grid-template-columns: 400px 40px;
+  grid-template-areas: "my-comment avatar";
+
+}
+.others-comment-container{
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 40px 400px;
+  grid-template-areas: "avatar other-comment";
+}
+.my-avatar{
+  grid-area: avatar;
+  width: 40px;
+}
+.my-comment-section{
+  position: relative;
+  max-width: 500px;
+  padding: 1.125em 1.5em;
+  background-color: #B6D1FF;
+  font-size: 18px;
+  border-radius: 4px;
+  box-shadow: 0.225rem 0.325rem 0.3rem rgba(0, 0, 0, .3), 0 0.0925rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+.other-comment-section{
+  position: relative;
+  max-width: 500px;
+  padding: 1.125em 1.5em;
+  background-color: #F2D0D0;
+  font-size: 18px;
+  border-radius: 4px;
+  box-shadow: 0.225rem 0.325rem 0.3rem rgba(0, 0, 0, .3), 0 0.0925rem 0.125rem rgba(0, 0, 0, .2);
+}
+.my-comment{
+  grid-area: my-comment;
+  padding-right: 10px;
+}
+.other-comment{
+  grid-area: other-comment;
+  padding-left: 10px;
+}
+.comment-annotation{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: smaller;
+  font-weight: bold;
+}

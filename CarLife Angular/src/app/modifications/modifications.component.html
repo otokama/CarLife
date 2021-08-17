@@ -1,0 +1,37 @@
+<mat-toolbar class="toolbar" *ngIf="!isTuner()">
+  <mat-form-field appearance="legacy" class="form">
+    <mat-select class="fonts" [(ngModel)]="currentVehicle" >
+
+      <mat-option class="fonts" *ngFor="let vehicle of vehiclesRecords" [value]="vehicle"  (click)="loadModRecords()">{{vehicle.nickname}}</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+</mat-toolbar>
+
+<mat-toolbar class="tuner-toolbar" *ngIf="isTuner()">
+  <mat-form-field appearance="legacy" class="tuner-form">
+    <mat-label class="tuner-field">Customer's vehicles</mat-label>
+    <mat-select [formControl]="vehicleGroupControl" [(ngModel)]="currentVehicle" class="tuner-field">
+      <mat-optgroup *ngFor="let group of vehicleGroup" [label]="group.ownerName" class="tuner-field">
+        <mat-option *ngFor="let vehicle of group.vehicles" [value]="vehicle.value" (click)="loadModRecords()" class="tuner-field">
+          {{vehicle.viewValue}}
+        </mat-option>
+
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field>
+
+</mat-toolbar>
+
+
+<div class="mod-container" >
+  <app-modificationrecord class="card-item" *ngFor="let modRecord of mods" [modRecord]="modRecord" [currentVehicle]="currentVehicle"
+    (editEvent)="openEditDialog($event)" (deleteEvent)="delete($event)" ></app-modificationrecord>
+
+</div>
+<div class="fab-container" *ngIf="!isTuner()">
+  <button mat-flat-button color="primary"  matTooltip="Add a new mod"  >
+    <i class="material-icons" (click)="openAddDialog()">add</i>
+  </button>
+</div>

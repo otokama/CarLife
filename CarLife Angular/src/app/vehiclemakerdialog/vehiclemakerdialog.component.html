@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="title">Adding a vehicle:</div>
+
+  <mat-dialog-content>
+
+    <mat-form-field>
+      <input matInput placeholder="Make" [(ngModel)]="make" [formControl]="fieldControl"  required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Year" [(ngModel)]="year" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Model" [(ngModel)]="model" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Mileage" [(ngModel)]="mileage"  [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="ownedSince" placeholder="Owned Since"  [formControl]="fieldControl" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Body Type</mat-label>
+      <mat-select  [(ngModel)]="bodyType"  [formControl]="fieldControl" required>
+        <mat-option value='0'>Hatchback</mat-option>
+        <mat-option value='1'>Sedan</mat-option>
+        <mat-option value='2'>Coupe</mat-option>
+        <mat-option value='3'>Sports Car</mat-option>
+        <mat-option value='4'>Convertible</mat-option>
+        <mat-option value='5'>SUV</mat-option>
+        <mat-option value='6'>Minivan</mat-option>
+        <mat-option value='7'>Pickup</mat-option>
+
+      </mat-select>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Nickname" [(ngModel)]="nickname" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="mat-raised-button" (click)="onNoClick()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+  </mat-dialog-actions>
+
+
+</div>

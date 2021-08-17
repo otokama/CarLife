@@ -1,0 +1,14 @@
+<mat-card>
+  <div  class="record-card">
+    <div class="makemodel">{{vehiclerecord.year}} {{vehiclerecord.make}} {{vehiclerecord.model}}</div>
+    <div *ngIf="displayOnDash === false"><img class="bodytype" src="../../assets/svg/bodytype/{{bodytype[vehiclerecord.bodyType]}}.svg"/></div>
+    <div class="mileage">Dashboard: {{vehiclerecord.mileage}} Miles</div>
+    <div class="ownedsince">Owned Since: {{vehiclerecord.ownedSince | date}}</div>
+    <div class="nickname">Nickname: {{vehiclerecord.nickname}}</div>
+  </div>
+
+  <mat-card-actions *ngIf="displayOnDash === false">
+    <button mat-button class="edit-fonts" (click)="edit()">Edit</button>
+    <button mat-button class="delete-fonts" (click)="delete()">Delete</button>
+  </mat-card-actions>
+</mat-card>

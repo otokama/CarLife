@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="title">Adding Maintenance Record for {{nickname}}</div>
+  <mat-dialog-content>
+    <mat-form-field>
+      <input matInput placeholder="Maintenance Name" [(ngModel)]="name" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Mileage Interval" [(ngModel)]="intervalMile" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Cost $" [(ngModel)]="cost" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="last-maintenance-field">
+      <input matInput placeholder="Last Maintenance Mileage" [(ngModel)]="mileage" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="date" placeholder="Last Maintenance at"  [formControl]="fieldControl" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="mat-raised-button" (click)="onNoClick()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+  </mat-dialog-actions>
+
+</div>

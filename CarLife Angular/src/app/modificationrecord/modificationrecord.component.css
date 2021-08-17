@@ -1,0 +1,54 @@
+.card{
+  display: grid;
+  grid-template-columns: 70px 80px 80px 80px;
+  grid-template-rows: 50px;
+  justify-content: space-around;
+  grid-template-areas:
+  "icon make make make"
+  "cost . partname partname"
+  "mileage mileage date date";
+}
+.edit-fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  color: darkgreen;
+}
+.delete-fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  color: darkred;
+}
+.make{
+  grid-area: make;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.icon{
+  width: 50px;
+  grid-area: icon;
+}
+.cost{
+  grid-area: cost;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: smaller;
+}
+.partname{
+  grid-area: partname;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: smaller;
+}
+.mileage{
+  grid-area: mileage;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: smaller;
+}
+.date{
+  grid-area: date;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: smaller;
+}
+

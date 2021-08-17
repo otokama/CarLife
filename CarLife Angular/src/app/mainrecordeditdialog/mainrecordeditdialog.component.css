@@ -1,0 +1,12 @@
+.title {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: larger;
+  padding-bottom: 10px;
+}
+.container {
+  justify-items: center;
+  padding: 5px 5px 5px 5px;
+}
+.last-maintenance-field {
+  width: 200px;
+}

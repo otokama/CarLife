@@ -1,0 +1,26 @@
+<div class="comment-card">
+ <div class="others-comment-container" *ngIf="!isMyComment">
+   <igx-avatar class="avatar" initials="{{comment.initials}}" size="small" [roundShape]="true" bgColor="{{comment.avatarColor}}"
+               matTooltip="{{comment.authorUsername}}"></igx-avatar>
+  <div class="other-comment">
+    <div class="other-comment-section">{{comment.comments}}</div>
+    <div class="comment-annotation">On {{comment.addDate | date:'medium'}}</div>
+    <div *ngIf="comment.maintenance && comment.vehicle" class="comment-annotation">Comments on: {{comment.maintenance}} for {{comment.vehicle}}</div>
+  </div>
+
+
+ </div>
+
+  <div class="my-comment-container" *ngIf="isMyComment">
+    <igx-avatar class="avatar" initials="{{comment.initials}}" size="small" [roundShape]="true" bgColor="{{comment.avatarColor}}"
+                matTooltip="{{comment.authorUsername}}"></igx-avatar>
+    <div class="my-comment">
+      <div class="my-comment-section">{{comment.comments}}</div>
+      <div class="comment-annotation">On {{comment.addDate | date:'medium'}}</div>
+      <div *ngIf="comment.maintenance && comment.vehicle" class="comment-annotation">Comments on: {{comment.maintenance}} for {{comment.vehicle}}</div>
+    </div>
+
+  </div>
+
+
+</div>

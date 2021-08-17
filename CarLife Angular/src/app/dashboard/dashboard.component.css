@@ -1,0 +1,11 @@
+.maintenance-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(305px, 1fr));
+
+}
+.card-item{
+  flex: 1;
+  padding: 10px 10px 10px 10px;
+  width:300px;
+
+}

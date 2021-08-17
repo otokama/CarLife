@@ -1,0 +1,56 @@
+<mat-toolbar class="toolbar" *ngIf="!isTuner()">
+  <mat-form-field appearance="legacy" class="form">
+    <mat-select class="fonts" [(ngModel)]="currentVehicle" >
+
+      <mat-option class="fonts" *ngFor="let vehicle of vehicles" [value]="vehicle.addDate"  (click)="loadRecords()">{{vehicle.nickname}}</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  <p class="mile-text">Today's Mileage: {{currentMileage}}</p>
+  <button class="updatebutton" mat-raised-button (click)="openDialogUpdateMileage()">Update Mileage</button>
+
+
+</mat-toolbar>
+
+<mat-toolbar *ngIf="isTuner()" class="tuner-toolbar">
+  <mat-form-field appearance="legacy" class="tuner-select-form">
+    <mat-label class="select-label">Customer's vehicles</mat-label>
+    <mat-select [formControl]="vehicleGroupControl" [(ngModel)]="currentVehicle" class="select-label">
+      <mat-optgroup *ngFor="let group of vehicleGroup" [label]="group.ownerName">
+        <mat-option *ngFor="let vehicle of group.vehicles" [value]="vehicle.value" (click)="loadRecords()" class="select-label">
+          {{vehicle.viewValue}}
+        </mat-option>
+
+      </mat-optgroup>
+    </mat-select>
+
+  </mat-form-field>
+
+</mat-toolbar>
+
+<div class="maintenance-container">
+  <app-mainrecord class="card-item" *ngFor="let record of currentRecords" [mainrecord]="record"
+                  [currentVehicle]="currentVehicle"
+                  [milesLeft]="getMilesLeft((record.intervalMile-(currentMileage
+                    - record.mileage)))"
+                  [milesLeftProgressValue]="getProgressValue(record.intervalMile-(currentMileage
+                    - record.mileage), record.intervalMile)"
+                  (editEvent)="openEditDialog($event)" (deleteEvent)="delete($event)" (commentEvent)="openCommentDialog($event)" ></app-mainrecord>
+
+</div>
+
+
+
+<!--<mat-sidenav class="mat-side-nav" #sidenav position="end">-->
+<!--  <p class="sidenav-title">Related Comment</p>-->
+
+<!--  <mat-card></mat-card>-->
+
+<!--  <button mat-raised-button (click)="sidenav.toggle()" >Close</button>-->
+<!--</mat-sidenav>-->
+
+<div class="fab-container" *ngIf="!isTuner()">
+  <button mat-flat-button color="primary"  matTooltip="Add new maintenance record"  >
+    <i class="material-icons" (click)="openDialogAddMaintenance()">add</i>
+  </button>
+</div>

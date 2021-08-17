@@ -1,0 +1,81 @@
+.maintenance-container {
+  display: grid;
+  justify-content: center;
+}
+.form {
+  flex:1;
+  padding-top: 11px;
+  width: 140px;
+}
+.mile-text{
+  flex:1;
+  width: fit-content;
+  font-family: 'Titillium Web', sans-serif;
+}
+.updatebutton{
+  flex:1;
+  width: fit-content;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.list-nav{
+  width: 220px;
+  min-width: 220px;
+}
+.list-item {
+  color: ghostwhite;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+.mat-side-nav{
+  border-radius: 4px;
+  padding: 10px;
+  margin: 16px;
+  width: 270px;
+  border-right: none;
+  background: lightblue;
+  text-align: center;
+}
+
+.sidenav-title{
+  text-align: center;
+  font-size: large;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+
+.toolbar {
+  display: grid;
+  height: fit-content;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+}
+.tuner-toolbar{
+  height: 78px;
+}
+.tuner-select-form{
+  width: 180px;
+  padding-top: 15px;
+}
+.select-label{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 17px;
+}
+.fonts {
+  font-family: 'Titillium Web', sans-serif;
+}
+.card-item{
+  flex: 1;
+  padding: 10px 10px 10px 10px;
+  width: fit-content;
+
+}
+.fab-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}

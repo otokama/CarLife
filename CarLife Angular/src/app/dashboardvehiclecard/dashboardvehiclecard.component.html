@@ -1,0 +1,15 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpen = true"
+                       (closed)="panelOpen = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="descrp">
+        {{vehicleRecord.nickname}}  <img class="bodytype-icon" src="../assets/svg/bodytype/{{bodytype[vehicleRecord.bodyType]}}.svg"/>
+      </mat-panel-title>
+      <mat-panel-description *ngIf="!panelOpen" class="descrp">
+        Today's Mileage: {{vehicleRecord.mileage}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-vehiclerecord [vehiclerecord]="vehicleRecord" [displayOnDash]="true"></app-vehiclerecord>
+
+  </mat-expansion-panel>
+</mat-accordion>

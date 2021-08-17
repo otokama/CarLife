@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="title">Add a comment:</div>
+  <mat-dialog-content>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Comment for this record" [(ngModel)]="comment" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" *ngIf="!isTuner()">
+      <mat-label>Select your tuner: </mat-label>
+      <mat-select [(ngModel)]="currentTuner" [formControl]="fieldControl"  required>
+        <mat-option *ngFor="let tuner of tunerList" [value]="tuner.username" >{{tuner.firstName + ' ' + tuner.lastName}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="mat-raised-button" (click)="onNoClick()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+  </mat-dialog-actions>
+
+</div>

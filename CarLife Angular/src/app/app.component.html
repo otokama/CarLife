@@ -1,0 +1,30 @@
+
+<mat-sidenav-container class="container">
+  <mat-toolbar  *ngIf="isUser" class="toolbar">
+    <button mat-icon-button color="primary" (click)="sidenav.toggle()">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+    <img class="image" src="../assets/carlife_title.png" routerLink="/"/>
+    <p *ngIf="!isTuner" class="welcome-font">Welcome, User {{currentUser.username}}!</p>
+    <p *ngIf="isTuner" class="welcome-font">Welcome, Tuner {{currentUser.username}}!</p>
+  </mat-toolbar>
+  <mat-sidenav class="mat-side-nav" #sidenav >
+    <mat-nav-list class="list-nav">
+      <mat-list-item>
+        <igx-avatar class="avatar" *ngIf="isUser" initials="{{initials}}" size="small" [roundShape]="true" bgColor="{{avatarColor}}"
+                    matTooltip="{{this.currentUser.username}}"></igx-avatar>
+      </mat-list-item >
+      <mat-list-item class="list-item" *ngIf="!isTuner" (click)="sidenav.toggle()" routerLink="/">Dashboard</mat-list-item>
+      <mat-list-item class="list-item" *ngIf="!isTuner" (click)="sidenav.toggle()" routerLink="/vehicles">Garage</mat-list-item>
+      <mat-list-item class="list-item" (click)="sidenav.toggle()" routerLink="/maintenance">Maintenance</mat-list-item>
+      <mat-list-item class="list-item" (click)="sidenav.toggle()" routerLink="/mods">Mods</mat-list-item>
+      <mat-list-item class="list-item" (click)="sidenav.toggle()" routerLink="/comments" >Comment</mat-list-item>
+      <mat-list-item class="list-item-logout" (click)="sidenav.toggle()" (click)="logout()" >Logout
+
+      </mat-list-item >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>

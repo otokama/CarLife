@@ -1,0 +1,20 @@
+.record-container{
+  display: grid;
+  justify-content: center;
+}
+.card-item{
+  flex: 1;
+  padding: 10px 10px 10px 10px;
+  width:fit-content;
+
+}
+.fab-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+

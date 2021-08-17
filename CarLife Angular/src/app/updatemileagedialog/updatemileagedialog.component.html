@@ -1,0 +1,14 @@
+<div>
+  <div class="title">Update today's mileage:</div>
+  <mat-dialog-content class="container">
+    <mat-form-field>
+      <input matInput placeholder="Miles" [(ngModel)]="miles" [formControl]="fieldControl" required>
+      <mat-error *ngIf="fieldControl.invalid">{{getError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-dialog-actions align="end" class="button">
+      <button class="mat-raised-button" (click)="onNoClick()">Close</button>
+      <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+    </mat-dialog-actions>
+  </mat-dialog-content>
+</div>

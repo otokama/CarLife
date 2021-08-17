@@ -1,0 +1,102 @@
+.record-card{
+  display:grid;
+  grid-template-columns: 80px 80px 50px 80px;
+  grid-template-rows: 40px;
+  grid-template-areas:
+    "title title title title"
+    "datetitle datetitle date date"
+    "mainmilestitle mainmilestitle mainmiles mainmiles"
+    "cost-title cost-title cost cost"
+    "interval-title interval-title interval interval"
+    "milesleft-title milesleft-title milesleft milesleft"
+    "progressbar progressbar progressbar progressbar";
+}
+.title {
+  font-size: larger;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  grid-area: title;
+  justify-self: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.date{
+  grid-area: date;
+  justify-self: end;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+.datetitle{
+  grid-area: datetitle;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.mainmiles{
+  grid-area: mainmiles;
+  justify-self: end;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+.mainmilestitle{
+  grid-area: mainmilestitle;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.cost{
+  grid-area: cost;
+  justify-self: end;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+.cost-title{
+  grid-area: cost-title;
+  justify-self: left;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.interval-title{
+  grid-area: interval-title;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.interval{
+  grid-area: interval;
+  justify-self: end;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+
+}
+.milesleft-title{
+  grid-area: milesleft-title;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+
+.milesleft{
+  grid-area: milesleft;
+  justify-self: end;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+
+
+.edit-fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  color: darkgreen;
+}
+.delete-fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  color: darkred;
+}
+.comment {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+.progressbar{
+  padding-top: 9px;
+  height: 13px;
+  grid-area: progressbar;
+}

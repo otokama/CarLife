@@ -1,0 +1,60 @@
+.container{
+  padding: 10px 20px 320px 20px;
+}
+.title-container{
+  display: grid;
+  grid-template-areas: "title select";
+  grid-template-columns: 460px 100px;
+}
+.fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  font-size: large;
+}
+.title{
+  text-align: left;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Titillium Web', sans-serif;
+  grid-area: title;
+  padding-left: 17px;
+}
+.select{
+  grid-area: select;
+  width: 125px;
+  padding-top: 12px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.comment-container{
+  display: flex;
+  justify-content: center;
+}
+.comment-card{
+  display: grid;
+  width: 90%;
+  border: 1px solid darkslategrey;
+  position: fixed;
+  z-index: 100;
+  bottom: 90px;
+}
+.full-width {
+  width: 100%;
+}
+.post-button {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.all-comments-container{
+  width: 100%;
+}
+
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 23px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}

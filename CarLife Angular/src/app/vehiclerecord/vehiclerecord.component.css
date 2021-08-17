@@ -1,0 +1,47 @@
+.record-card{
+  display:grid;
+  grid-template-columns: 80px 80px 80px 46px;
+  grid-template-rows: 30px;
+  justify-content: space-around;
+
+  grid-template-areas:
+    "makemodel makemodel makemodel bodytype"
+    "ownedsince ownedsince ownedsince ownedsince"
+    "mileage mileage mileage mileage "
+    "nickname nickname nickname . ";
+}
+.bodytype{
+  grid-area: bodytype;
+  width: 37px;
+}
+.makemodel{
+  grid-area: makemodel;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+}
+.mileage{
+  grid-area: mileage;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.ownedsince{
+  grid-area: ownedsince;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.nickname{
+  grid-area: nickname;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.edit-fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  color: darkgreen;
+}
+.delete-fonts {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  color: darkred;
+}

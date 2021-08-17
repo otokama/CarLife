@@ -1,0 +1,18 @@
+<mat-tab-group>
+  <mat-tab label="My Vehicles" >
+    <app-dashboardvehiclecard *ngFor="let vehicle of vehicleRecords" [vehicleRecord]="vehicle"></app-dashboardvehiclecard>
+
+    <p *ngIf="!hasVehicles">no vehicles</p>
+  </mat-tab>
+  <mat-tab label="Maintenance">
+    <app-dashboardmaincard></app-dashboardmaincard>
+  </mat-tab>
+
+<!--  <mat-tab label="Mods">-->
+<!--    <app-dashboardmods></app-dashboardmods>-->
+<!--  </mat-tab>-->
+
+<!--  <mat-tab label="Tuner Comment">-->
+<!--    <app-dashboardcommentcard></app-dashboardcommentcard>-->
+<!--  </mat-tab>-->
+</mat-tab-group>

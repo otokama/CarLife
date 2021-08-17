@@ -1,0 +1,57 @@
+.list-nav{
+  width: 220px;
+  min-width: 220px;
+}
+.image{
+  width: 280px;
+  grid-area: image;
+}
+.menu-icon {
+  color: aliceblue;
+  grid-area: menu-icon;
+}
+.home-button{
+  grid-area: home-button;
+}
+.welcome-font{
+  color: aqua;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  grid-area: welcome;
+}
+.list-item {
+  color: ghostwhite;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+.list-item-logout{
+  font-family: 'Titillium Web', sans-serif;
+  color: firebrick;
+  font-weight: bolder;
+}
+.mat-side-nav{
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px;
+  width: 270px;
+  border-right: none;
+  background: darkcyan;
+  text-align: center;
+}
+
+.toolbar {
+  background-color: darkcyan;
+  height: 65px;
+  display: grid;
+  justify-content: space-between;
+  grid-template-areas: "menu-icon image welcome";
+}
+
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
