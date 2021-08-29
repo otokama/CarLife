@@ -39,6 +39,7 @@ import { VehiclerecordeditdialogComponent } from './vehiclerecordeditdialog/vehi
 import { CommentdialogComponent } from './commentdialog/commentdialog.component';
 import { CommentcardComponent } from './commentcard/commentcard.component';
 import { CommentsectionComponent } from './commentsection/commentsection.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { CommentsectionComponent } from './commentsection/commentsection.compone
     VehiclerecordeditdialogComponent,
     CommentdialogComponent,
     CommentcardComponent,
-    CommentsectionComponent
+    CommentsectionComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,

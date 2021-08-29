@@ -10,9 +10,9 @@
   </mat-toolbar>
   <mat-sidenav class="mat-side-nav" #sidenav >
     <mat-nav-list class="list-nav">
-      <mat-list-item>
+      <mat-list-item (click)="sidenav.toggle()" routerLink="/profile">
         <igx-avatar class="avatar" *ngIf="isUser" initials="{{initials}}" size="small" [roundShape]="true" bgColor="{{avatarColor}}"
-                    matTooltip="{{this.currentUser.username}}"></igx-avatar>
+                    matTooltip="{{this.currentUser.username}}" ></igx-avatar>
       </mat-list-item >
       <mat-list-item class="list-item" *ngIf="!isTuner" (click)="sidenav.toggle()" routerLink="/">Dashboard</mat-list-item>
       <mat-list-item class="list-item" *ngIf="!isTuner" (click)="sidenav.toggle()" routerLink="/vehicles">Garage</mat-list-item>

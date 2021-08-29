@@ -10,6 +10,7 @@ import {VehiclesComponent} from './vehicles/vehicles.component';
 import {MaintenanceComponent} from './maintenance/maintenance.component';
 import {TunercommentComponent} from './tunercomment/tunercomment.component';
 import {ModificationsComponent} from './modifications/modifications.component';
+import {UserprofileComponent} from './userprofile/userprofile.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuard], data: { roles: [Role.user]}},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'maintenance', component: MaintenanceComponent, canActivate: [AuthGuard]},
   {path: 'mods', component: ModificationsComponent, canActivate: [AuthGuard]},
   {path: 'comments', component: TunercommentComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: UserprofileComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: '' }];
 
 @NgModule({
