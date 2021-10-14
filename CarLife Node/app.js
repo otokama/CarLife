@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-app.use( express.static(path.join(__dirname+'../../Carlife_angular/dist/HW2'), {redirect: false}));
+app.use( express.static(path.join(__dirname+'/dist/HW2'), {redirect: false}));
 
 /*
 const allowedExt = ['.js','.ico','.css','.png','.jpg','.woff2','.woff','.ttf','.svg'];

@@ -1,5 +1,4 @@
 {
-
     "secret": "sadfaseagasef",
-    "connectionString": "mongodb://localhost/CS3754"
+    "connectionString": "mongodb://mongo-db:27017/carlife"
 }
