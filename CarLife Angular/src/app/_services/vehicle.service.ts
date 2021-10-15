@@ -4,7 +4,7 @@ import {VehicleRecord} from "../_models/VehicleRecord";
 import {VehicleType} from "../_models/VehicleType";
 import {AuthService} from '../_services/auth.service';
 import {HttpClient} from '@angular/common/http';
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class VehicleService {
@@ -34,7 +34,7 @@ export class VehicleService {
     return this.http.post(`${this.URL}/vehicle/editvehicle`, record);
   }
   createNewVehicleRecord(record: VehicleRecord) {
-    return this.http.post('${this.URL}/vehicle/addvehicle', record);
+    return this.http.post(`${this.URL}/vehicle/addvehicle`, record);
   }
 
   updateMileage(addDate: Date, miles: number) {
