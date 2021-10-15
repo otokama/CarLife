@@ -14,7 +14,7 @@ function errorHandler(err, req, res, next) {
 
     if (err.name === 'UnauthorizedError') {
 
-        return  res.sendFile(path.join(__dirname, `../../Carlife_angular/dist/HW2/index.html`));
+        return  res.sendFile(path.join(__dirname, `../dist/HW2/index.html`));
         // jwt authentication error
         //res.redirect('/#');
         // return res.status(401).json({ message: 'Unauthorized'});

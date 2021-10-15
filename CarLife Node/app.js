@@ -33,14 +33,13 @@ app.use('/vehicle', require('./routes/vehicle.router'));
 app.use('/mods', require('./routes/mods.router'));
 app.use('/comment', require('./routes/comment.router'));
 app.use('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, `../../Carlife_angular/dist/HW2${req.url}`));
+  res.sendFile(path.join(__dirname, `./dist/HW2${req.url}`));
 });
 
 app.use(errorHandler);
 
 // start server
-const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 3030;
-app.listen(port, function () {
-  console.log('Server listening on port ' + port);
+app.listen(process.env.PORT || 3030, '0.0.0.0', function () {
+  console.log('Server listening on port ' + (process.env.PORT || 3030));
 });
 module.exports = app;

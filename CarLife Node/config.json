@@ -1,4 +1,4 @@
 {
     "secret": "sadfaseagasef",
-    "connectionString": "mongodb://mongo-db:27017/carlife"
+    "connectionString": "mongodb+srv://carlife:ZaUikFUxZO1gtM0a@cluster0.evuez.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }
