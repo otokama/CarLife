@@ -7,7 +7,7 @@ module.exports = jwt;
 //expressJwt(...) returns a function that takes three paramaters req, res and next. Thus, this will register as middleware.
 function jwt() {
 const secret = config.secret;
-    return new expressJwt({ secret , isRevoked }).unless({
+    return new expressJwt({ secret ,  algorithms: ['HS256'], isRevoked }).unless({
         path: [
             // public routes that don't require authentication
             '/',
