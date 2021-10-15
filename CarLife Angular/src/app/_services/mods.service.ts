@@ -3,10 +3,12 @@ import {AuthService} from '../_services/auth.service';
 import {Mods} from "../_models/Mods";
 import {ModType} from "../_models/ModType";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class ModsService {
   mods: Mods[] = [];
+  private URL = environment.URL;
   constructor( private authService: AuthService, private http: HttpClient) {
     this.mods = [
       {
@@ -54,19 +56,19 @@ export class ModsService {
   }
 
   getRecords(addDate: Date) {
-    return this.http.get<Mods[]>(`http://localhost:3030/mods/getMods/${addDate}`);
+    return this.http.get<Mods[]>(`${this.URL}/mods/getMods/${addDate}`);
   }
 
   create(record: Mods) {
-    return this.http.post(`http://localhost:3030/mods/addmods`, record);
+    return this.http.post(`${this.URL}/mods/addmods`, record);
   }
 
   edit(record: Mods) {
-    return this.http.post(`http://localhost:3030/mods/editmods`, record);
+    return this.http.post(`${this.URL}/mods/editmods`, record);
   }
 
   delete(record: Mods) {
-    return this.http.delete(`http://localhost:3030/mods/deletemods/${record.addDate}`);
+    return this.http.delete(`${this.URL}/mods/deletemods/${record.addDate}`);
   }
 
 }

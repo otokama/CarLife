@@ -5,14 +5,14 @@ import {User} from '../_models/user';
 import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {Role} from "../_models/role";
-
+import {environment} from "../../environments/environment";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
-
+  private URL = environment.URL;
 
 
   //Added HttpClient
@@ -41,7 +41,7 @@ export class AuthService {
     // Changed to network based authentication strategy.
 
     // Read more here: https://angular.io/guide/http
-    return this.http.post<any>(`http://localhost:3030/user/authenticate`, { username, password })
+    return this.http.post<any>(`${this.URL}/user/authenticate`, { username, password })
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
