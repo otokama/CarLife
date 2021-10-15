@@ -1,6 +1,6 @@
 const expressJwt = require('express-jwt');
 const userService = require('../services/user.service');
-const config = require('../config.json');
+const config = require('../../CarLife Angular/config.json');
 
 module.exports = jwt;
 
